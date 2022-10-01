@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Ganaste</title>
+</head>
+<body>
+    <h1  class="text-center my-4">Bienvenido al Juego de Números Genial</h1>
+    <h2  class="text-center text-success my-4">Estoy pensando en un número entre el 1 y el 100</h2>
+    <div class="gap-4 card d-grid col-4 p-4 mx-auto text-center text-white bg-success">
+        <h2> Ganaste! el número era {{session['numerorandom']}}</h2>
+        <h4> Lo lograste sólo en {{session['contador']}} intentos</h4>
+        <form action="/jugardenuevo" method="post">
+            <button type="submit" class="btn bg-light text-success fw-bold fs-5">Jugar De Nuevo</button>
+        </form>
+    </div>
+    <div class="gap-4 card d-grid col-4 p-4 mx-auto text-center text-white bg-secondary my-4">
+        <form action="/ganadores" method="post">
+            <h3>Inscribete en los ganadores</h3>
+            <label for="nombre">Nombre:</label class="fw-bold">
+            <input type="text" name="nombre" class="form-control my-2 fw-bold">
+            <button type="submit" class="btn bg-light text-secondary fw-bold">Registra tus datos</button>
+        </form>
+    </div>
+    
+</body>
+</html>

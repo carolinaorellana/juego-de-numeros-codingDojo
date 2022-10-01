@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Juego Genial</title>
+</head>
+<body>
+    <h1  class="text-center my-4">Bienvenido al Juego de Números Genial</h1>
+    <h2  class="text-center text-info my-4">Estoy pensando en un número entre el 1 y el 100</h2>
+    <h5 class="text-center text-info my-4">Tienes 5 intentos</h5>
+    <div class="card d-grid col-4 p-4 mx-auto {{session['color']}} ">
+        <h4 class="text-center text-white fw-bold">{{session['estado']}}</h4>
+    </div>
+    <form action="/ad" method="post">
+        <div class="card text-white bg-secondary mb-3 d-grid gap-3 col-4 mx-auto my-4 p-4">
+            <label for="adivina" class="text-center fw-bold fs-3">¿Puedes adivinar?</label>
+            <h5 class="text-center text-black">Este es tu intento número {{session['contador']}}</h5>
+            <input type="number" name="adivina" value="0">
+            <button type="submit" class="btn btn-info text-white fw-bold fs-5">Adivinar</button>
+        </div>
+    </form>
+    <!--Este se debe activar para ver el numero es de prueba, borrar en el orginal-->
+    <!-- <h2  class="text-center">{{session['numerorandom']}}</h2> -->
+
+</body>
+</html>
